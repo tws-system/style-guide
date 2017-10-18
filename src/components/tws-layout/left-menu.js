@@ -19,7 +19,7 @@ class LeftMenu extends Component {
           <Menu.Item key='2'><Link to='/gaps'><FormattedMessage id='gaps' /></Link></Menu.Item>
         </SubMenu>
         <SubMenu key='sub2' title={<span><FormattedMessage id='components' /></span>}>
-          <Menu.Item key='5'><FormattedMessage id='general' /></Menu.Item>
+          <Menu.Item key='5'><Link to='/general'><FormattedMessage id='general' /></Link></Menu.Item>
           <Menu.Item key='6'><FormattedMessage id='layout' /></Menu.Item>
           <Menu.Item key='7'><FormattedMessage id='navigation' /></Menu.Item>
           <Menu.Item key='8'><FormattedMessage id='dataDisplay' /></Menu.Item>

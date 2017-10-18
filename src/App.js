@@ -7,6 +7,7 @@ import { IntlProvider } from 'react-intl'
 import ScoreSheetTable from './components/score-sheet-table'
 import Colors from './components/colors'
 import Gaps from './components/gaps'
+import General from './components/general'
 import DP from './components/simple-components'
 
 import locales from './locales'
@@ -28,6 +29,7 @@ class App extends Component {
               <Route path='/score-sheet' component={ScoreSheetTable} />
               <Route path='/colors' component={Colors} />
               <Route path='/gaps' component={Gaps} />
+              <Route path='/general' component={General} />
               <Route path='/dp' component={DP} />
             </TwsLayout>
           </Router>

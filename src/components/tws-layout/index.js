@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Layout, Breadcrumb, Row, Col} from 'antd'
 import LeftMenu from './left-menu'
 import logo from '../../images/tws-logo.png'
-import '../../less/tws-layout.less'
+import '../../less/index.less'
 import LanguageButtons from './language-buttons'
 import { FormattedMessage } from 'react-intl'
 
