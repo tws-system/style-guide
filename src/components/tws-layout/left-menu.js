@@ -19,17 +19,18 @@ class LeftMenu extends Component {
           <Menu.Item key='2'><Link to='/gaps'><FormattedMessage id='gaps' /></Link></Menu.Item>
         </SubMenu>
         <SubMenu key='sub2' title={<span><FormattedMessage id='components' /></span>}>
-          <Menu.Item key='5'><Link to='/general'><FormattedMessage id='general' /></Link></Menu.Item>
-          <Menu.Item key='6'><FormattedMessage id='layout' /></Menu.Item>
+          <Menu.Item key='5'><Link to='/buttons'><FormattedMessage id='buttons' /></Link></Menu.Item>
+          <Menu.Item key='6'><Link to='/popconfirm'><FormattedMessage id='popconfirm' /></Link></Menu.Item>
           <Menu.Item key='7'><FormattedMessage id='navigation' /></Menu.Item>
           <Menu.Item key='8'><FormattedMessage id='dataDisplay' /></Menu.Item>
           <Menu.Item key='9'><FormattedMessage id='feedback' /></Menu.Item>
-        </SubMenu>
-        <SubMenu key='sub3' title={<span><FormattedMessage id='layout' /></span>}>
           <Menu.Item key='10'><Link to='/dp'><FormattedMessage id='pagination' /></Link></Menu.Item>
         </SubMenu>
+        <SubMenu key='sub3' title={<span><FormattedMessage id='layout' /></span>}>
+          <Menu.Item key='11'><Link to='/dp'><FormattedMessage id='header' /></Link></Menu.Item>
+        </SubMenu>
         <SubMenu key='sub4' title={<span><FormattedMessage id='example' /></span>}>
-          <Menu.Item key='11'><Link to='/score-sheet'><FormattedMessage id='scoreSheet' /></Link></Menu.Item>
+          <Menu.Item key='12'><Link to='/score-sheet'><FormattedMessage id='scoreSheet' /></Link></Menu.Item>
         </SubMenu>
       </Menu>
     )

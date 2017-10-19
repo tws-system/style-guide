@@ -12,7 +12,9 @@ const lang = {
   example: '示例',
   general: '通用',
   pagination: '翻页',
-  scoreSheet: '成绩表'
+  scoreSheet: '成绩表',
+  buttons: '按钮',
+  popconfirm: '气泡确认框'
 }
 
 export default lang

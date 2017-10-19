@@ -11,8 +11,10 @@ const lang = {
   feedback: 'Feedback',
   example: 'Example',
   general: 'General',
+  buttons: 'Buttons',
   pagination: 'Pagination',
-  scoreSheet: 'ScoreSheet'
+  scoreSheet: 'ScoreSheet',
+  popconfirm: 'PopConfirm'
 }
 
 export default lang
