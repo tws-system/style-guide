@@ -14,7 +14,7 @@ const lang = {
   pagination: '翻页',
   scoreSheet: '成绩表',
   buttons: '按钮',
-  popconfirm: '气泡确认框',
+  popConfirm: '气泡确认框',
   breadcrumb: '面包屑',
   menu: '导航菜单',
   hideCode: '隐藏代码',

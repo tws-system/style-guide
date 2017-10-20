@@ -14,7 +14,7 @@ const lang = {
   buttons: 'Buttons',
   pagination: 'Pagination',
   scoreSheet: 'ScoreSheet',
-  popconfirm: 'PopConfirm',
+  popConfirm: 'PopConfirm',
   breadcrumb: 'Breadcrumb',
   menu: 'Menu',
   hideCode: 'Hide Code',
