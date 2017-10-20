@@ -19,7 +19,9 @@ const lang = {
   menu: '导航菜单',
   hideCode: '隐藏代码',
   showCode: '显示代码',
-  card: '卡片'
+  card: '卡片',
+  dataEntry: '数据录入',
+  form: '表单'
 }
 
 export default lang

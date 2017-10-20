@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import ColorBox from './color-box'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { docco } from 'react-syntax-highlighter/dist/styles'
+import DemoShower from '../../demo-shower'
 
 const colors1 = [{
   name: '@primary-color',
@@ -64,20 +63,29 @@ const colors3 = [{
   whiteFont: true
 }]
 
+const lessStr = `
+.color-box {
+  height: 96px;
+  line-height: @gap-3;
+  padding-top: @gap-2;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #000;
+  color: @black;
+
+  &--success {
+    color: @white;
+    background: @color-success;
+  }
+
+  &--warn {
+    color: @white;
+    background: @color-warn;
+  }
+}`.trim()
+
 class ColorsDemo extends Component {
   render () {
-    const codeStringSuccess = `
-.component-color__box_success {
-  ...
-  background: @color-success;
-}  
-`
-    const codeStringWarn = `
-.component-color__box_warn {
-  ...
-  background: @color-warn;
-}  
-`
     return (
       <div>
         <h1 className='margin-t-2 margin-b-2'>颜色</h1>
@@ -121,31 +129,23 @@ class ColorsDemo extends Component {
           }
         </Row>
 
-        <h2 className='margin-t-2 margin-b-2'>示例</h2>
-        <Row gutter={16}>
+        <DemoShower title='实例' desc='实例' less={lessStr}>
+          <Row gutter={16}>
+            <Col className='gutter-row' span={6}>
+              <div className='color-box color-box--success'>
+                <div>@color-success</div>
+                <div>成功色</div>
+              </div>
+            </Col>
 
-          <Col className='gutter-row' span={6}>
-            <div className='component-color__box_success'>
-              <div>@color-success</div>
-              <div>成功色</div>
-
-            </div>
-
-            <h4 className='margin-t-2'>代码(less):</h4>
-            <SyntaxHighlighter language='css' style={docco}>{codeStringSuccess}</SyntaxHighlighter>
-          </Col>
-
-          <Col className='gutter-row' span={6}>
-            <div className='component-color__box_warn'>
-              <div>@color-warn</div>
-              <div>警告色</div>
-            </div>
-
-            <h4 className='margin-t-2'>代码(less):</h4>
-            <SyntaxHighlighter language='css' style={docco}>{codeStringWarn}</SyntaxHighlighter>
-          </Col>
-
-        </Row>
+            <Col className='gutter-row' span={6}>
+              <div className='color-box color-box--warn'>
+                <div>@color-warn</div>
+                <div>警告色</div>
+              </div>
+            </Col>
+          </Row>
+        </DemoShower>
       </div>
     )
   }

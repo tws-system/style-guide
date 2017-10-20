@@ -19,7 +19,9 @@ const lang = {
   menu: 'Menu',
   hideCode: 'Hide Code',
   showCode: 'Show Code',
-  card: 'Card'
+  card: 'Card',
+  dataEntry: 'Data Entry',
+  form: 'Form'
 }
 
 export default lang

@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import { Button } from 'antd'
 import DemoShower from '../demo-shower'
 
+const btnLessStr = `
+.tws-btn-group {
+  button + button {
+    margin-left: @gap;
+  }
+}
+`.trim()
+
 class ButtonDemo extends Component {
   render () {
     return (
@@ -12,11 +20,14 @@ class ButtonDemo extends Component {
           <Button type='primary'>Primary</Button>
         </DemoShower>
 
-        <DemoShower title='多个按钮' desc='有多个按钮时,只有一个 primary 即可,tws-btn可在按钮之间加入间距'>
-          <div>
-            <Button className='tws-btn' type='primary'>Save</Button>
-            <Button className='tws-btn'>Submit</Button>
-            <Button className='tws-btn'>Cancel</Button>
+        <DemoShower title='多个按钮'
+          desc='有多个按钮时,只有一个 primary 即可,tws-btn可在按钮之间加入间距'
+          less={btnLessStr}
+        >
+          <div className='tws-btn-group'>
+            <Button type='primary'>Save</Button>
+            <Button>Submit</Button>
+            <Button>Cancel</Button>
           </div>
         </DemoShower>
 

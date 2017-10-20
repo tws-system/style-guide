@@ -25,12 +25,14 @@ class LeftMenu extends Component {
           <Menu.Item key='8'><Link to='/breadcrumb'><FormattedMessage id='breadcrumb' /></Link></Menu.Item>
           <Menu.Item key='9'><Link to='/menu'><FormattedMessage id='menu' /></Link></Menu.Item>
           <Menu.Item key='10'><Link to='/card'><FormattedMessage id='card' /></Link></Menu.Item>
-
         </SubMenu>
-        <SubMenu key='sub3' title={<span><FormattedMessage id='layout' /></span>}>
+        <SubMenu key='sub3' title={<span><FormattedMessage id='dataEntry' /></span>}>
+          <Menu.Item key='21'><Link to='/form'><FormattedMessage id='form' /></Link></Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub4' title={<span><FormattedMessage id='layout' /></span>}>
           <Menu.Item key='21'><Link to='/dp'><FormattedMessage id='header' /></Link></Menu.Item>
         </SubMenu>
-        <SubMenu key='sub4' title={<span><FormattedMessage id='example' /></span>}>
+        <SubMenu key='sub5' title={<span><FormattedMessage id='example' /></span>}>
           <Menu.Item key='22'><Link to='/score-sheet'><FormattedMessage id='scoreSheet' /></Link></Menu.Item>
         </SubMenu>
       </Menu>
