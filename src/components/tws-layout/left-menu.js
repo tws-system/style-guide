@@ -21,16 +21,16 @@ class LeftMenu extends Component {
         <SubMenu key='sub2' title={<span><FormattedMessage id='components' /></span>}>
           <Menu.Item key='5'><Link to='/buttons'><FormattedMessage id='buttons' /></Link></Menu.Item>
           <Menu.Item key='6'><Link to='/popconfirm'><FormattedMessage id='popconfirm' /></Link></Menu.Item>
-          <Menu.Item key='7'><FormattedMessage id='navigation' /></Menu.Item>
-          <Menu.Item key='8'><FormattedMessage id='dataDisplay' /></Menu.Item>
-          <Menu.Item key='9'><FormattedMessage id='feedback' /></Menu.Item>
-          <Menu.Item key='10'><Link to='/dp'><FormattedMessage id='pagination' /></Link></Menu.Item>
+          <Menu.Item key='7'><Link to='/pagination'><FormattedMessage id='pagination' /></Link></Menu.Item>
+          <Menu.Item key='8'><Link to='/breadcrumb'><FormattedMessage id='breadcrumb' /></Link></Menu.Item>
+          <Menu.Item key='9'><Link to='/menu'><FormattedMessage id='menu' /></Link></Menu.Item>
+
         </SubMenu>
         <SubMenu key='sub3' title={<span><FormattedMessage id='layout' /></span>}>
-          <Menu.Item key='11'><Link to='/dp'><FormattedMessage id='header' /></Link></Menu.Item>
+          <Menu.Item key='21'><Link to='/dp'><FormattedMessage id='header' /></Link></Menu.Item>
         </SubMenu>
         <SubMenu key='sub4' title={<span><FormattedMessage id='example' /></span>}>
-          <Menu.Item key='12'><Link to='/score-sheet'><FormattedMessage id='scoreSheet' /></Link></Menu.Item>
+          <Menu.Item key='22'><Link to='/score-sheet'><FormattedMessage id='scoreSheet' /></Link></Menu.Item>
         </SubMenu>
       </Menu>
     )

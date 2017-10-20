@@ -64,7 +64,7 @@ const colors3 = [{
   whiteFont: true
 }]
 
-class ColorList extends Component {
+class ColorsDemo extends Component {
   render () {
     const codeStringSuccess = `
 .component-color__box_success {
@@ -151,4 +151,4 @@ class ColorList extends Component {
   }
 }
 
-export default ColorList
+export default ColorsDemo

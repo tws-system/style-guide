@@ -1,15 +1,5 @@
 import React, {Component} from 'react'
 
-const defaultStyle = {
-  display: 'inline-block',
-  height: '36px',
-  lineHeight: '36px',
-  textAlign: 'center',
-  borderRadius: '4px',
-  border: '1px solid #000',
-  padding: '0 16px'
-}
-
 class Gaps extends Component {
   render () {
     return (

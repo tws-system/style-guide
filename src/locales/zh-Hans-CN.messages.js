@@ -4,7 +4,7 @@ const lang = {
   basic: '基础',
   colors: '颜色',
   gaps: '间距',
-  components: '组件',
+  components: '通用组件',
   layout: '布局',
   navigation: '导航',
   dataDisplay: '数据显示',
@@ -14,7 +14,11 @@ const lang = {
   pagination: '翻页',
   scoreSheet: '成绩表',
   buttons: '按钮',
-  popconfirm: '气泡确认框'
+  popconfirm: '气泡确认框',
+  breadcrumb: '面包屑',
+  menu: '导航菜单',
+  hideCode: '隐藏代码',
+  showCode: '显示代码'
 }
 
 export default lang

@@ -11,8 +11,6 @@ class LanguageButtons extends Component {
     return (<div style={{
       float: 'right'
     }}>
-
-      <span style={{marginRight: 16}}>Change locale of components: </span>
       <Radio.Group defaultValue='cn' onChange={this.changeLocale.bind(this)}>
         <Radio.Button key='en' value='en'>English</Radio.Button>
         <Radio.Button key='zh' value='zh'>中文</Radio.Button>

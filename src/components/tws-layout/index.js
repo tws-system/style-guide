@@ -5,7 +5,6 @@ import logo from '../../images/tws-logo.png'
 import '../../less/index.less'
 import LanguageButtons from './language-buttons'
 import { FormattedMessage } from 'react-intl'
-
 const { Header, Content, Footer, Sider } = Layout
 
 class TwsLayout extends Component {
@@ -14,10 +13,11 @@ class TwsLayout extends Component {
       <Layout>
         <Header className='App-header' style={{lineHeight: '36px'}}>
           <Row>
-            <Col span={8}>
+            <Col span={6}>
               <img src={logo} className='App-logo' alt='logo' />
             </Col>
-            <Col span={16}>
+            <Col span={14} />
+            <Col span={4}>
               <LanguageButtons />
             </Col>
           </Row>

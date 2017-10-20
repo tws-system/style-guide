@@ -14,7 +14,11 @@ const lang = {
   buttons: 'Buttons',
   pagination: 'Pagination',
   scoreSheet: 'ScoreSheet',
-  popconfirm: 'PopConfirm'
+  popconfirm: 'PopConfirm',
+  breadcrumb: 'Breadcrumb',
+  menu: 'Menu',
+  hideCode: 'Hide Code',
+  showCode: 'Show Code'
 }
 
 export default lang
