@@ -18,7 +18,8 @@ const lang = {
   breadcrumb: 'Breadcrumb',
   menu: 'Menu',
   hideCode: 'Hide Code',
-  showCode: 'Show Code'
+  showCode: 'Show Code',
+  card: 'Card'
 }
 
 export default lang

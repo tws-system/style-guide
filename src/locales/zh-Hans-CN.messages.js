@@ -18,7 +18,8 @@ const lang = {
   breadcrumb: '面包屑',
   menu: '导航菜单',
   hideCode: '隐藏代码',
-  showCode: '显示代码'
+  showCode: '显示代码',
+  card: '卡片'
 }
 
 export default lang

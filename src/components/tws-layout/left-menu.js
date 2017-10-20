@@ -24,6 +24,7 @@ class LeftMenu extends Component {
           <Menu.Item key='7'><Link to='/pagination'><FormattedMessage id='pagination' /></Link></Menu.Item>
           <Menu.Item key='8'><Link to='/breadcrumb'><FormattedMessage id='breadcrumb' /></Link></Menu.Item>
           <Menu.Item key='9'><Link to='/menu'><FormattedMessage id='menu' /></Link></Menu.Item>
+          <Menu.Item key='10'><Link to='/card'><FormattedMessage id='card' /></Link></Menu.Item>
 
         </SubMenu>
         <SubMenu key='sub3' title={<span><FormattedMessage id='layout' /></span>}>

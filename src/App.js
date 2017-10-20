@@ -13,6 +13,7 @@ import PopConfirmDemo from './components/ui-component/popconfirm-demo'
 import PaginationComponent from './components/ui-component/pagination-component'
 import BreadcrumbDemo from './components/ui-component/breadcrumb-demo'
 import MenuDemo from './components/ui-component/menu-demo'
+import CardDemo from './components/ui-component/card-demo'
 
 import Spike from './components/spike'
 
@@ -38,6 +39,7 @@ class App extends Component {
               <Route path='/pagination' component={PaginationComponent} />
               <Route path='/breadcrumb' component={BreadcrumbDemo} />
               <Route path='/menu' component={MenuDemo} />
+              <Route path='/card' component={CardDemo} />
 
               <Route path='/spike' component={Spike} />
             </TwsLayout>

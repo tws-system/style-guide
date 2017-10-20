@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Popconfirm } from 'antd'
+import { Card } from 'antd'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { docco } from 'react-syntax-highlighter/dist/styles'
 import reactElementToJSXString from 'react-element-to-jsx-string'
