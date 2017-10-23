@@ -33,16 +33,18 @@ class App extends Component {
           <Router>
             <TwsLayout>
               <Route exact path='/' component={ColorsDemo} />
-              <Route path='/score-sheet' component={ScoreSheetTable} />
+
               <Route path='/colors' component={ColorsDemo} />
               <Route path='/gaps' component={Gaps} />
               <Route path='/buttons' component={ButtonDemo} />
-              <Route path='/popconfirm' component={PopConfirmDemo} />
+              <Route path='/popConfirm' component={PopConfirmDemo} />
               <Route path='/pagination' component={PaginationComponent} />
               <Route path='/breadcrumb' component={BreadcrumbDemo} />
               <Route path='/menu' component={MenuDemo} />
               <Route path='/card' component={CardDemo} />
               <Route path='/form' component={FormDemo} />
+
+              <Route path='/scoreSheet' component={ScoreSheetTable} />
 
               <Route path='/spike' component={Spike} />
             </TwsLayout>
