@@ -11,7 +11,7 @@ const submenus = [{
   items: ['colors', 'gaps']
 }, {
   name: 'components',
-  items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card']
+  items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card', 'tabs']
 }, {
   name: 'dataEntry',
   items: ['form']

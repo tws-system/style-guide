@@ -8,11 +8,15 @@ class MarkdownEditorDemo extends Component {
 # 我今天干了些什么  
 `.trim()
     return (
-      <DemoShower title='markdown编辑器' desc='编辑器'>
-        <div>
-          <MarkdownEditor defaultValue={defaultTemplate} />
-        </div>
-      </DemoShower>
+      <div>
+        <h1>Markdown 编辑器</h1>
+        <DemoShower title='markdown编辑器' desc='编辑器'>
+          <div>
+            <MarkdownEditor defaultValue={defaultTemplate} />
+          </div>
+        </DemoShower>
+      </div>
+
     )
   }
 }

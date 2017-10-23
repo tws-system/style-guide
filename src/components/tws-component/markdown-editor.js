@@ -5,8 +5,10 @@ import CodeMirror from 'react-codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/markdown/markdown'
 import marked from 'marked'
+import Markmirror from 'react-markmirror';
 
 const TabPane = Tabs.TabPane
+const FOCUS_WAITINT_TIME_IN_MS = 100
 
 class MarkdownEditor extends Component {
   constructor (props) {
@@ -20,6 +22,7 @@ class MarkdownEditor extends Component {
   componentDidMount () {
     marked(this.state.code, (err, source) => {
       this.setState({source})
+      this.focusEditor.bind(this)
     })
   }
 
@@ -29,6 +32,18 @@ class MarkdownEditor extends Component {
     })
 
     this.setState({code})
+  }
+
+  handleTabChange (tabKey) {
+    if (tabKey === 'source') {
+      setTimeout(this.focusEditor.bind(this), FOCUS_WAITINT_TIME_IN_MS)
+    }
+  }
+
+  focusEditor () {
+    this.codeMirror.focus()
+    const inst = this.codeMirror.getCodeMirror()
+    inst.setCursor(inst.lineCount(), 0)
   }
 
   render () {
@@ -46,11 +61,11 @@ class MarkdownEditor extends Component {
     }
     return (
       <div className='tws-markdown-editor'>
-        <Tabs defaultActiveKey='1' animated={false}>
-          <TabPane tab='source' key='1'>
-            <CodeMirror value={this.state.code} focus onChange={this.updateCode.bind(this)} options={options} />
+        <Tabs defaultActiveKey='1' animated={false} onChange={this.handleTabChange.bind(this)}>
+          <TabPane tab='source' key='source'>
+            <CodeMirror ref={(ref) => { this.codeMirror = ref }} value={this.state.code} autoFocus onChange={this.updateCode.bind(this)} options={options} />
           </TabPane>
-          <TabPane tab='preview' key='2'>
+          <TabPane tab='preview' key='preview'>
             <div className='markdown-body' dangerouslySetInnerHTML={{ __html: this.state.source }} />
           </TabPane>
         </Tabs>

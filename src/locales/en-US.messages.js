@@ -20,6 +20,7 @@ const lang = {
   hideCode: 'Hide Code',
   showCode: 'Show Code',
   card: 'Card',
+  tabs: 'Tabs',
   dataEntry: 'Data Entry',
   form: 'Form',
   markdownEditor: 'Markdown Editor'

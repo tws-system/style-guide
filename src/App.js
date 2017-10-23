@@ -14,6 +14,7 @@ import PaginationComponent from './components/ui-component/pagination-component'
 import BreadcrumbDemo from './components/ui-component/breadcrumb-demo'
 import MenuDemo from './components/ui-component/menu-demo'
 import CardDemo from './components/ui-component/card-demo'
+import TabsDemo from './components/ui-component/tabs-demo'
 
 import FormDemo from './components/data-entry/form-demo'
 import MarkdownEditorDemo from './components/custom-component/markdown-editor-demo'
@@ -43,7 +44,10 @@ class App extends Component {
               <Route path='/breadcrumb' component={BreadcrumbDemo} />
               <Route path='/menu' component={MenuDemo} />
               <Route path='/card' component={CardDemo} />
+              <Route path='/tabs' component={TabsDemo} />
+
               <Route path='/form' component={FormDemo} />
+
               <Route path='/markdownEditor' component={MarkdownEditorDemo} />
 
               <Route path='/scoreSheet' component={ScoreSheetTable} />

@@ -20,6 +20,7 @@ const lang = {
   hideCode: '隐藏代码',
   showCode: '显示代码',
   card: '卡片',
+  tabs: '页签',
   dataEntry: '数据录入',
   form: '表单',
   markdownEditor: 'Markdown编辑器'
