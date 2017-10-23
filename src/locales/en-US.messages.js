@@ -21,7 +21,8 @@ const lang = {
   showCode: 'Show Code',
   card: 'Card',
   dataEntry: 'Data Entry',
-  form: 'Form'
+  form: 'Form',
+  markdownEditor: 'Markdown Editor'
 }
 
 export default lang

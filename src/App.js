@@ -16,6 +16,7 @@ import MenuDemo from './components/ui-component/menu-demo'
 import CardDemo from './components/ui-component/card-demo'
 
 import FormDemo from './components/data-entry/form-demo'
+import MarkdownEditorDemo from './components/custom-component/markdown-editor-demo'
 
 import Spike from './components/spike'
 
@@ -43,6 +44,7 @@ class App extends Component {
               <Route path='/menu' component={MenuDemo} />
               <Route path='/card' component={CardDemo} />
               <Route path='/form' component={FormDemo} />
+              <Route path='/markdownEditor' component={MarkdownEditorDemo} />
 
               <Route path='/scoreSheet' component={ScoreSheetTable} />
 

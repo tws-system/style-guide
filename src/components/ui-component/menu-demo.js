@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Menu, Icon } from 'antd'
-import DemoShower from '../demo-shower'
+import { DemoShower } from '../tws-component'
 
 const SubMenu = Menu.SubMenu
 

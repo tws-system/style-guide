@@ -20,7 +20,7 @@ const submenus = [{
   items: ['header']
 }, {
   name: 'example',
-  items: ['scoreSheet']
+  items: ['scoreSheet', 'markdownEditor']
 }]
 
 class LeftMenu extends Component {
@@ -28,9 +28,11 @@ class LeftMenu extends Component {
     const {lang} = queryString.parse(this.props.location.search)
     const search = queryString.stringify({lang})
     const selectedKey = this.props.location.pathname.slice(1) || 'colors'
-    const openKey = submenus.find((submenu) => {
+    const currentMenuItem = submenus.find((submenu) => {
       return submenu.items.indexOf(selectedKey) > -1
-    }).name
+    })
+
+    const openKey = currentMenuItem ? currentMenuItem.name : 'basic'
 
     return (
       <Menu

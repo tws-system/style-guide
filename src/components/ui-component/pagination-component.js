@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Pagination } from 'antd'
-import DemoShower from '../demo-shower'
+import { DemoShower } from '../tws-component'
 
 class PaginationComponent extends Component {
   render () {

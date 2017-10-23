@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
-import DemoShower from '../demo-shower'
+import { DemoShower } from '../tws-component'
 
 const btnLessStr = `
 .tws-btn-group {

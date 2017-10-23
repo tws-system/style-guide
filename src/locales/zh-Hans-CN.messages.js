@@ -21,7 +21,8 @@ const lang = {
   showCode: '显示代码',
   card: '卡片',
   dataEntry: '数据录入',
-  form: '表单'
+  form: '表单',
+  markdownEditor: 'Markdown编辑器'
 }
 
 export default lang

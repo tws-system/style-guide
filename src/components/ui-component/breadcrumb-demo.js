@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Breadcrumb } from 'antd'
-import DemoShower from '../demo-shower'
+import { DemoShower } from '../tws-component'
 
 class BreadcrumbDemo extends Component {
   render () {

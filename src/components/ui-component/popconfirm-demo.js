@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Popconfirm } from 'antd'
-import DemoShower from '../demo-shower'
+import { DemoShower } from '../tws-component'
 
 class PopConfirmDemo extends Component {
   render () {

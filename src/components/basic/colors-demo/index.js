@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import ColorBox from './color-box'
-import DemoShower from '../../demo-shower'
+import {DemoShower} from '../../tws-component'
 
 const colors1 = [{
   name: '@primary-color',

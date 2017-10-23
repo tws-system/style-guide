@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Row, Col, Card } from 'antd'
-import DemoShower from '../demo-shower'
+import { Row, Col, Card } from 'antd'
+import { DemoShower } from '../tws-component'
 
 const lessStr = `
 .tws-card {

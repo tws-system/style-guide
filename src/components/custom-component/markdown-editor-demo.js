@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 import {MarkdownEditor, DemoShower} from '../tws-component'
 
-class MenuDemo extends Component {
+class MarkdownEditorDemo extends Component {
   render () {
     const defaultTemplate = `
 # 我今天干了些什么  
@@ -17,4 +17,4 @@ class MenuDemo extends Component {
   }
 }
 
-export default MenuDemo
+export default MarkdownEditorDemo
