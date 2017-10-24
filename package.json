@@ -16,6 +16,7 @@
     "react-codemirror": "^1.0.0",
     "react-dom": "^15.6.1",
     "react-element-to-jsx-string": "^13.0.0",
+    "react-frame-component": "^2.0.0",
     "react-intl": "^2.4.0",
     "react-markdown": "^2.5.0",
     "react-markmirror": "^0.4.16",

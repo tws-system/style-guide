@@ -1,74 +1,62 @@
 import React, {Component} from 'react'
-import { Tabs } from 'antd'
-import 'github-markdown-css'
-import CodeMirror from 'react-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/markdown/markdown'
-import marked from 'marked'
-import Markmirror from 'react-markmirror';
-
-const TabPane = Tabs.TabPane
-const FOCUS_WAITINT_TIME_IN_MS = 100
 
 class MarkdownEditor extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      code: this.props.defaultValue || '# H1',
-      source: ''
+      height: 600
     }
+  }
+
+  sendMessageToEditorFrame (message) {
+    this.editorMDFrame.contentWindow.postMessage(
+      Object.assign({}, message, {uuid: this.uuid}), '*'
+    )
+  }
+
+  handleMessage (message) {
+    if (message.data.uuid !== this.uuid) {
+      return
+    }
+    switch (message.data.type) {
+      case 'markDown': {
+        if (this.props.onUpdate) {
+          this.props.onUpdate(message.data.value)
+        }
+        break
+      }
+
+      case 'height': {
+        this.setState({height: message.data.value + 32})
+        break
+      }
+
+      default: {
+        console.log(message)
+      }
+    }
+  }
+
+  handleMDFrameLoad () {
+    const {preview} = this.props
+    const {height} = this.state
+    this.sendMessageToEditorFrame({
+      type: 'init',
+      defaultValue: this.props.defaultValue,
+      options: Object.assign({preview, height})
+    })
   }
 
   componentDidMount () {
-    marked(this.state.code, (err, source) => {
-      this.setState({source})
-      this.focusEditor.bind(this)
-    })
-  }
-
-  updateCode (code) {
-    marked(code, (err, source) => {
-      this.setState({source})
-    })
-
-    this.setState({code})
-  }
-
-  handleTabChange (tabKey) {
-    if (tabKey === 'source') {
-      setTimeout(this.focusEditor.bind(this), FOCUS_WAITINT_TIME_IN_MS)
-    }
-  }
-
-  focusEditor () {
-    this.codeMirror.focus()
-    const inst = this.codeMirror.getCodeMirror()
-    inst.setCursor(inst.lineCount(), 0)
+    window.addEventListener('message', this.handleMessage.bind(this), false)
+    this.editorMDFrame.onload = this.handleMDFrameLoad.bind(this)
+    this.uuid = parseInt(Math.random() * 10000)
   }
 
   render () {
-    var options = {
-      lineNumbers: true,
-      mode: 'markdown',
-      renderer: new marked.Renderer(),
-      gfm: true,
-      tables: true,
-      breaks: false,
-      pedantic: false,
-      sanitize: true,
-      smartLists: true,
-      smartypants: false
-    }
     return (
       <div className='tws-markdown-editor'>
-        <Tabs defaultActiveKey='1' animated={false} onChange={this.handleTabChange.bind(this)}>
-          <TabPane tab='source' key='source'>
-            <CodeMirror ref={(ref) => { this.codeMirror = ref }} value={this.state.code} autoFocus onChange={this.updateCode.bind(this)} options={options} />
-          </TabPane>
-          <TabPane tab='preview' key='preview'>
-            <div className='markdown-body' dangerouslySetInnerHTML={{ __html: this.state.source }} />
-          </TabPane>
-        </Tabs>
+        <iframe title='markdown' ref={(ref) => { this.editorMDFrame = ref }} scrolling='no' src='./editor-md/examples/simple.html' style={{width: '100%', height: this.state.height, overflow: 'hidden', border: 'none'}} />
       </div>
     )
   }
