@@ -31,8 +31,14 @@ Andrew->China: Says Hello
 Note right of China: China thinks\\nabout it 
 China-->Andrew: How are you? 
 Andrew->>China: I am good thanks!
-\`\`\`    
-    
+\`\`\`     
+`
+    const demoCode2 = `
+#预览模式
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 `
     return (
       <div>
@@ -44,9 +50,9 @@ Andrew->>China: I am good thanks!
           </div>
         </DemoShower>
 
-        <DemoShower title='markdown编辑器' desc='预览模式'>
+        <DemoShower title='markdown查看器' desc='预览模式，不可编辑'>
           <div>
-            <MarkdownEditor preview defaultValue={demoCode} onUpdate={this.handleUpdate.bind(this)} />
+            <MarkdownEditor preview defaultValue={demoCode2} onUpdate={this.handleUpdate.bind(this)} />
           </div>
         </DemoShower>
       </div>
