@@ -23,7 +23,8 @@ const lang = {
   tabs: '页签',
   dataEntry: '数据录入',
   form: '表单',
-  markdownEditor: 'Markdown编辑器'
+  markdownEditor: 'Markdown编辑器',
+  businessComponent: '业务组件'
 }
 
 export default lang

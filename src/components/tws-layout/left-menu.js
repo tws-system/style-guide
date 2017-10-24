@@ -13,14 +13,11 @@ const submenus = [{
   name: 'components',
   items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card', 'tabs']
 }, {
-  name: 'dataEntry',
-  items: ['form']
+  name: 'businessComponent',
+  items: ['form', 'scoreSheet', 'markdownEditor']
 }, {
   name: 'layout',
   items: ['header']
-}, {
-  name: 'example',
-  items: ['scoreSheet', 'markdownEditor']
 }]
 
 class LeftMenu extends Component {

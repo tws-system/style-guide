@@ -16,7 +16,7 @@ import MenuDemo from './components/ui-component/menu-demo'
 import CardDemo from './components/ui-component/card-demo'
 import TabsDemo from './components/ui-component/tabs-demo'
 
-import FormDemo from './components/data-entry/form-demo'
+import FormDemo from './components/custom-component/form-demo'
 import MarkdownEditorDemo from './components/custom-component/markdown-editor-demo'
 
 import Spike from './components/spike'

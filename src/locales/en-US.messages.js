@@ -23,7 +23,8 @@ const lang = {
   tabs: 'Tabs',
   dataEntry: 'Data Entry',
   form: 'Form',
-  markdownEditor: 'Markdown Editor'
+  markdownEditor: 'Markdown Editor',
+  businessComponent: 'Business Component'
 }
 
 export default lang

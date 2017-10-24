@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-
-import {MarkdownEditor, DemoShower} from '../tws-component'
+import {DemoShower} from '../tws-component'
+import {TWSMarkdownEditor} from 'tws-antd'
 
 class MarkdownEditorDemo extends Component {
   handleUpdate (source) {
@@ -8,7 +8,7 @@ class MarkdownEditorDemo extends Component {
   }
 
   render () {
-    const demoCode = `
+    const demoCode1 = `
 #编辑/预览模式
 
 ### 绘制流程图 Flowchart
@@ -32,7 +32,16 @@ Note right of China: China thinks\\nabout it
 China-->Andrew: How are you? 
 Andrew->>China: I am good thanks!
 \`\`\`     
-`
+  `
+
+    const code1 = `
+import {TWSMarkdownEditor} from 'tws-antd'
+
+...
+
+<TWSMarkdownEditor defaultValue={...} onUpdate={console.log} />
+`.trim()
+
     const demoCode2 = `
 #预览模式
 | First Header  | Second Header |
@@ -40,19 +49,27 @@ Andrew->>China: I am good thanks!
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 `
+
+    const code2 = `
+import {TWSMarkdownEditor} from 'tws-antd'
+
+...
+
+<TWSMarkdownEditor preview defaultValue={...} />
+`.trim()
     return (
       <div>
         <h1>Markdown 编辑器</h1>
         <hr />
-        <DemoShower title='markdown编辑器' desc='编辑器'>
+        <DemoShower title='markdown编辑器' desc='编辑器' code={code1}>
           <div>
-            <MarkdownEditor defaultValue={demoCode} onUpdate={this.handleUpdate.bind(this)} />
+            <TWSMarkdownEditor defaultValue={demoCode1} onUpdate={console.log} />
           </div>
         </DemoShower>
 
-        <DemoShower title='markdown查看器' desc='预览模式，不可编辑'>
+        <DemoShower title='markdown查看器' desc='预览模式，不可编辑' code={code2} >
           <div>
-            <MarkdownEditor preview defaultValue={demoCode2} onUpdate={this.handleUpdate.bind(this)} />
+            <TWSMarkdownEditor preview defaultValue={demoCode2} />
           </div>
         </DemoShower>
       </div>

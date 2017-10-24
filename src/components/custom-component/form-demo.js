@@ -31,11 +31,20 @@ class FormDemo extends Component {
                 >
                   <Input type='password' />
                 </FormItem>
-                <FormItem wrapperCol={{
+                <FormItem
+                  labelCol={{span: 6}}
+                  wrapperCol={{span: 14}}
+                  label='Email'
+                  hasFeedback
+                >
+                  <Input type='email' />
+                </FormItem>
+                <FormItem className='tws-btn-group' wrapperCol={{
                   span: 14,
                   offset: 6
                 }}>
                   <Button type='primary' htmlType='submit'>Register</Button>
+                  <Button htmlType='cancel'>Cancel</Button>
                 </FormItem>
               </Form>
             </Col>

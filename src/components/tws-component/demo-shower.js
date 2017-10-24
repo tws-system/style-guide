@@ -58,7 +58,9 @@ class DemoShower extends Component {
           <div className='code-wrap' style={codeWrapStyle}>
             <Tabs className='tws-demo-shower__menu' defaultActiveKey='1' animated={false}>
               <TabPane tab='jsx' key='1'>
-                <SyntaxHighlighter language='html' style={docco}>{code}</SyntaxHighlighter>
+                <SyntaxHighlighter language='html' style={docco}>
+                  {code}
+                </SyntaxHighlighter>
               </TabPane>
               <TabPane tab='less' disabled={!this.props.less} key='2'>
                 <SyntaxHighlighter language='css' style={docco}>{this.props.less}</SyntaxHighlighter>
@@ -73,7 +75,8 @@ class DemoShower extends Component {
 
 DemoShower.propTypes = {
   title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired
+  desc: PropTypes.string.isRequired,
+  preCode: PropTypes.string
 }
 
 export default DemoShower
