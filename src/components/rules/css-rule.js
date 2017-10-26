@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import {TwsMarkdownEditor} from 'tws-antd'
+import { TwsMarkdownEditor } from 'tws-antd'
 
 class FormDemo extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      source: ''
+      value: ''
     }
   }
 
@@ -15,9 +15,9 @@ class FormDemo extends Component {
       .then((resp) => {
         return resp.text()
       })
-      .then(source => {
+      .then(value => {
         this.setState({
-          source
+          value
         })
       })
   }
@@ -25,10 +25,7 @@ class FormDemo extends Component {
   render () {
     return (
       <div>
-        {
-          this.state.source ? <TwsMarkdownEditor preview defaultValue={this.state.source} />
-           : <div />
-        }
+        <TwsMarkdownEditor preview value={this.state.value} />
       </div>
     )
   }
