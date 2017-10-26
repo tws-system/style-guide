@@ -45,10 +45,7 @@
         htmlDecode      : "style,script,iframe",  // you can filter tags decode
         tocm            : true,    // Using [TOCM]
         emoji           : true,
-        taskList        : true,
-        tex             : true,  // 默认不解析
-        flowChart       : true,  // 默认不解析
-        sequenceDiagram : true,  // 默认不解析
+        taskList        : true
       });
 
       sendMessageToParent({
@@ -60,8 +57,6 @@
       var testEditor = editormd('test-editormd', {
         width: '100%',
         height,
-        flowChart: true,
-        sequenceDiagram : true,
         syncScrolling: 'single',
         path: '../lib/',
         onchange: function () {
