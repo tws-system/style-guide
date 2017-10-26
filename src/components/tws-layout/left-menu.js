@@ -7,6 +7,9 @@ import queryString from 'query-string'
 const {SubMenu} = Menu
 
 const submenus = [{
+  name: 'rules',
+  items: ['cssRule']
+}, {
   name: 'basic',
   items: ['colors', 'gaps']
 }, {
@@ -15,18 +18,21 @@ const submenus = [{
 }, {
   name: 'businessComponent',
   items: ['scoreSheet', 'header']
+}, {
+  name: 'layout',
+  items: ['defaultLayout']
 }]
 
 class LeftMenu extends Component {
   render () {
     const {lang} = queryString.parse(this.props.location.search)
     const search = queryString.stringify({lang})
-    const selectedKey = this.props.location.pathname.slice(1) || 'colors'
+    const selectedKey = this.props.location.pathname.slice(1) || 'cssRule'
     const currentMenuItem = submenus.find((submenu) => {
       return submenu.items.indexOf(selectedKey) > -1
     })
 
-    const openKey = currentMenuItem ? currentMenuItem.name : 'basic'
+    const openKey = currentMenuItem ? currentMenuItem.name : 'rules'
 
     return (
       <Menu

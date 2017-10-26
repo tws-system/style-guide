@@ -6,6 +6,7 @@ const lang = {
   gaps: 'Gaps',
   components: 'Components',
   layout: 'Layout',
+  defaultLayout: 'Default Layout',
   navigation: 'Navigation',
   dataDisplay: 'DataDisplay',
   feedback: 'Feedback',
@@ -24,7 +25,9 @@ const lang = {
   dataEntry: 'Data Entry',
   form: 'Form',
   markdownEditor: 'Markdown Editor',
-  businessComponent: 'Business Component'
+  businessComponent: 'Business Component',
+  rules: 'Rules',
+  cssRule: 'BEM-CSS Rule'
 }
 
 export default lang

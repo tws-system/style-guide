@@ -6,6 +6,7 @@ const lang = {
   gaps: '间距',
   components: '通用组件',
   layout: '布局',
+  defaultLayout: '默认布局',
   navigation: '导航',
   dataDisplay: '数据显示',
   feedback: '反馈',
@@ -24,7 +25,9 @@ const lang = {
   dataEntry: '数据录入',
   form: '表单',
   markdownEditor: 'Markdown编辑器',
-  businessComponent: '业务组件'
+  businessComponent: '业务组件',
+  rules: '规范',
+  cssRule: 'BEM-CSS规范'
 }
 
 export default lang

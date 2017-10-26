@@ -12,7 +12,7 @@
         <textarea id="markdown-textarea" style="display:none;"></textarea>
     </div>
     <div id="test-editormd-view">
-        <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
+        <textarea id="markdown-preview" style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
     </div>
 </div>
 <script src="js/jquery.min.js"></script>
@@ -28,7 +28,7 @@
 <script src="../editormd.js"></script>
 <script type="text/javascript">
 
-  var uuid
+  var uuid,testEditormdView
 
   function sendMessageToParent (message) {
     window.parent.window.postMessage(Object.assign({}, message, {
@@ -40,7 +40,7 @@
     uuid = data.uuid
     const {preview, height} = data.options
     if(data.options.preview) {
-      var testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+      testEditormdView = editormd.markdownToHTML("test-editormd-view", {
         markdown        : data.defaultValue ,//+ "\r\n" + $("#append-test").text(),
         htmlDecode      : "style,script,iframe",  // you can filter tags decode
         tocm            : true,    // Using [TOCM]
@@ -73,11 +73,31 @@
 
   }
 
+  function updateValue (data) {
+    console.log(data.value)
+    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+      markdown        : data.value,//+ "\r\n" + $("#append-test").text(),
+      htmlDecode      : "style,script,iframe"
+    });
+    window.setTimeout(()=> {
+      sendMessageToParent({
+        type: 'height',
+        value: $('#test-editormd-view').height()
+      })
+    }, 1000)
+
+  }
+
   $(function () {
     window.addEventListener('message', (message) => {
       switch (message.data.type) {
         case 'init': {
           initMarkDown(message.data);
+          break
+        }
+
+        case 'value': {
+          updateValue(message.data);
           break
         }
 
@@ -87,7 +107,6 @@
       }
     }, false)
   })
-
 
 </script>
 </body>

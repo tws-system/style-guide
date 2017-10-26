@@ -15,6 +15,7 @@ import BreadcrumbDemo from './components/ui-component/breadcrumb-demo'
 import MenuDemo from './components/ui-component/menu-demo'
 import CardDemo from './components/ui-component/card-demo'
 import TabsDemo from './components/ui-component/tabs-demo'
+import cssRule from './components/rules/css-rule'
 
 import FormDemo from './components/custom-component/form-demo'
 import MarkdownEditorDemo from './components/custom-component/markdown-editor-demo'
@@ -34,7 +35,7 @@ class App extends Component {
         <LocaleProvider locale={langData.locale}>
           <Router>
             <TwsLayout>
-              <Route exact path='/' component={ColorsDemo} />
+              <Route exact path='/' component={cssRule} />
 
               <Route path='/colors' component={ColorsDemo} />
               <Route path='/gaps' component={Gaps} />
@@ -47,6 +48,7 @@ class App extends Component {
               <Route path='/tabs' component={TabsDemo} />
 
               <Route path='/form' component={FormDemo} />
+              <Route path='/cssRule' component={cssRule} />
 
               <Route path='/markdownEditor' component={MarkdownEditorDemo} />
 

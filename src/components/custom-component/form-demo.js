@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, Row, Col, Button} from 'antd'
+import { Form, Input, Row, Col, Button } from 'antd'
 import {DemoShower} from '../tws-component'
 
 const FormItem = Form.Item
