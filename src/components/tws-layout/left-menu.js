@@ -14,10 +14,10 @@ const submenus = [{
   items: ['colors', 'gaps']
 }, {
   name: 'components',
-  items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card', 'tabs', 'markdownEditor', 'form']
+  items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card', 'tabs', 'markdownEditor', 'form', 'expandCollapse']
 }, {
   name: 'businessComponent',
-  items: ['scoreSheet', 'header']
+  items: ['scoreSheet', 'textEdit', 'sectionPresentation', 'header']
 }, {
   name: 'layout',
   items: ['defaultLayout']
@@ -44,12 +44,13 @@ class LeftMenu extends Component {
         {
           submenus.map((subMenu) => {
             return (
-              <SubMenu key={subMenu.name} title={<span><FormattedMessage id={subMenu.name} /></span>}>
+              <SubMenu key={subMenu.name} title={<span><FormattedMessage id={subMenu.name}/></span>}>
                 {
                   subMenu.items.map((name, idx) => {
                     let pathname = '/' + name
                     return (
-                      <Menu.Item key={name}><Link to={{pathname, search}}><FormattedMessage id={name} /></Link></Menu.Item>
+                      <Menu.Item key={name}><Link to={{pathname, search}}><FormattedMessage
+                        id={name}/></Link></Menu.Item>
                     )
                   })
                 }

@@ -27,7 +27,10 @@ const lang = {
   markdownEditor: 'Markdown编辑器',
   businessComponent: '业务组件',
   rules: '规范',
-  cssRule: 'BEM-CSS规范'
+  cssRule: 'BEM-CSS规范',
+  textEdit: '表格中文本编辑',
+  expandCollapse:'展开收起',
+  sectionPresentation:'章节介绍'
 }
 
 export default lang

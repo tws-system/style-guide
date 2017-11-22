@@ -27,7 +27,10 @@ const lang = {
   markdownEditor: 'Markdown Editor',
   businessComponent: 'Business Component',
   rules: 'Rules',
-  cssRule: 'BEM-CSS Rule'
+  cssRule: 'BEM-CSS Rule',
+  textEdit: 'TextEdit',
+  expandCollapse:'Expand Collapse',
+  sectionPresentation:'Section Presentation'
 }
 
 export default lang
