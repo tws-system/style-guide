@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Row, Col, Icon, Button,Card } from 'antd'
+import { Table, Row, Col, Icon, Button, Card } from 'antd'
 import { TwsMarkdownEditor } from 'tws-antd'
 
 class TextEditTable extends Component {
@@ -11,35 +11,31 @@ class TextEditTable extends Component {
       expandedRowKeys: [],
       dataSource: [{
         key: 0,
-        name: '胡彦斌',
-        age: 5,
-        address: 10
+        name: 'HTML',
+        description: '这章节主要是对HTML的一个基础学习，包括标签...',
+        operate: 'delete'
       }, {
         key: 1,
-        name: '胡彦祖',
-        age: 5,
-        address: '20'
+        name: 'CSS',
+        description: '这章节主要是对CSS的一个基础学习',
+        operate: 'delete'
       }],
-      editName: ''
+      editDescription: '',
+      editable:false
     }
   }
 
-  editText (record) {
-    this.setState({
-      expandedRowKeys: [record.key]
-    })
-  }
 
   handleUpdate (source) {
     this.setState({
-      editName: source
+      editDescription: source
     })
   }
 
   modifyText (record) {
     let newData = this.state.dataSource.map((data) => {
       if (data.key === record.key) {
-        data.name = this.state.editName
+        data.description = this.state.editDescription
       }
       return data
     })
@@ -51,7 +47,7 @@ class TextEditTable extends Component {
 
   expandedRowRender (record) {
     return <div>
-      <TwsMarkdownEditor value={record.name} onUpdate={this.handleUpdate.bind(this)}/>
+      <TwsMarkdownEditor value={record.description} onUpdate={this.handleUpdate.bind(this)}/>
       <Button onClick={this.modifyText.bind(this, record)}>提交</Button>
     </div>
   }
@@ -65,41 +61,59 @@ class TextEditTable extends Component {
     return <Button onClick={openAll}>全部展开</Button>
   }
 
+  editText (record) {
+    this.setState({
+      expandedRowKeys: [record.key],
+      editable:true
+    })
+  }
+
+  cancelEdit(){
+    this.setState({
+      expandedRowKeys: [],
+      editable:false
+    })
+  }
+  edits(record){
+    return <div>
+      {this.state.editable?<Icon type='check' onClick={this.cancelEdit.bind(this, record)}/>:<Icon type='edit' onClick={this.editText.bind(this, record)}/>}
+    </div>
+  }
   render () {
     const {dataSource, expandRowByClick, expandIconAsCell, expandedRowKeys} = this.state
 
     const columns = [{
-      title: '用户名',
+      title: '任务',
       dataIndex: 'name',
       key: 'name',
-      description: 'a',
+      width:'20%'
+    }, {
+      title: '描述',
+      dataIndex: 'description',
+      key: 'age',
+      width:'60%',
       render: (text, record) => {
         return <Row>
           <Col span={20} className='Col'>
             <span>{text}</span>
           </Col>
           <Col span={4}>
-            <Icon type='edit' onClick={this.editText.bind(this, record)}/>
+            {this.edits(record)}
           </Col>
         </Row>
       }
     }, {
-      title: '完成题目',
-      dataIndex: 'age',
-      key: 'age',
-      description: 'a'
-    }, {
-      title: '提交次数',
-      dataIndex: 'address',
-      key: 'address',
-      description: 'a'
+      title: '操作',
+      dataIndex: 'operate',
+      key: 'operate',
+      width:'20%'
     }]
 
     return (
       <div>
-        <Card title={'表格中文本编辑'}>
+        <Card title={'表格中文本编辑'} noHovering>
           {this.toggleButton()}
-          <Table style={{margin:'20px 0px'}} dataSource={dataSource} columns={columns}
+          <Table style={{margin: '20px 0px'}} dataSource={dataSource} columns={columns}
                  expandRowByClick={expandRowByClick}
                  expandIconAsCell={expandIconAsCell}
                  expandedRowKeys={expandedRowKeys}

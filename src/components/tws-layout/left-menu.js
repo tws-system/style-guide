@@ -17,7 +17,7 @@ const submenus = [{
   items: ['buttons', 'popConfirm', 'pagination', 'breadcrumb', 'menu', 'card', 'tabs', 'markdownEditor', 'form', 'expandCollapse']
 }, {
   name: 'businessComponent',
-  items: ['scoreSheet', 'textEdit', 'sectionPresentation', 'header']
+  items: ['scoreSheet', 'textEdit', 'assignmentPresentation', 'header']
 }, {
   name: 'layout',
   items: ['defaultLayout']

@@ -30,7 +30,7 @@ const lang = {
   cssRule: 'BEM-CSS Rule',
   textEdit: 'TextEdit',
   expandCollapse:'Expand Collapse',
-  sectionPresentation:'Section Presentation'
+  assignmentPresentation:'Assignment Presentation'
 }
 
 export default lang

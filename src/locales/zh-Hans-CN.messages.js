@@ -30,7 +30,7 @@ const lang = {
   cssRule: 'BEM-CSS规范',
   textEdit: '表格中文本编辑',
   expandCollapse:'展开收起',
-  sectionPresentation:'章节介绍'
+  assignmentPresentation:'任务介绍'
 }
 
 export default lang

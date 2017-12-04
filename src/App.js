@@ -7,9 +7,7 @@ import locales from './locales'
 
 import ScoreSheetTable from './components/custom-component/score-sheet-table'
 import TextEditTable from './components/custom-component/text-edit-table'
-import SectionPresentation from './components/custom-component/section-presentation/index'
-import Task from './components/custom-component/section-presentation/Task'
-import Section from './components/custom-component/section-presentation/Section'
+import AssignmentPresentation from './components/custom-component/assignment-presentation'
 
 import ColorsDemo from './components/basic/colors-demo'
 import Gaps from './components/basic/gaps-demo'
@@ -29,7 +27,9 @@ import MarkdownEditorDemo from './components/custom-component/markdown-editor-de
 
 import Spike from './components/spike'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
+
+
 
 class App extends Component {
   render () {
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <IntlProvider locale={langData.intlLocale} messages={langData.intlMessage}>
         <LocaleProvider locale={langData.locale}>
-          <BrowserRouter>
+          <HashRouter>
             <TwsLayout>
               <Route exact path='/' component={cssRule}/>
 
@@ -60,14 +60,11 @@ class App extends Component {
               <Route path='/scoreSheet' component={ScoreSheetTable}/>
               <Route path='/textEdit' component={TextEditTable}/>
 
-              <Route path='/sectionPresentation' component={SectionPresentation}/>
-              <Route path='/sectionPresentation/task' component={Task}/>
-              <Route path='/sectionPresentation/task/section' component={Section}/>
+              <Route path='/assignmentPresentation' component={AssignmentPresentation}/>
 
               <Route path='/spike' component={Spike}/>
-              <Route path='/task' component={Task}/>
             </TwsLayout>
-          </BrowserRouter>
+          </HashRouter>
         </LocaleProvider>
       </IntlProvider>
 
